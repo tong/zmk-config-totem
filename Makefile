@@ -23,8 +23,8 @@ install-right: build/$(SHIELD_RIGHT)/zephyr/zmk.uf2
 setup:
 	test -d .env || python -m venv .env
 	. .env/bin/activate && \
-	pip install --upgrade pip && \
-	pip install protobuf grpcio-tools && \
+	python -m pip install --upgrade pip && \
+	python -m pip install protobuf grpcio-tools west pyelftools && \
 	(test -d .west || west init -l config/) && \
 	west update
 
