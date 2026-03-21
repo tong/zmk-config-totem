@@ -14,7 +14,9 @@ ZMK_STUDIO_FLAG_settings_reset =
 
 all: build/$(SHIELD_LEFT)/zephyr/zmk.uf2 build/$(SHIELD_RIGHT)/zephyr/zmk.uf2
 
-build/%/zephyr/zmk.uf2:
+BUILD_DEPS := $(wildcard boards/shields/totem/*) $(wildcard config/*)
+
+build/%/zephyr/zmk.uf2: $(BUILD_DEPS)
 	. .env/bin/activate && \
 	export ZEPHYR_BASE=$(ZEPHYR_BASE) && west build -s zmk/app -b $(BOARD) -d build/$* -- -DSHIELD=$* -DZMK_CONFIG=$(ZMK_CONFIG_PATH) -DZEPHYR_BASE=$(ZEPHYR_BASE) -DZephyr_DIR=$(ZEPHYR_BASE)/share/zephyr-package/cmake $(ZMK_STUDIO_FLAG_$*)
 
