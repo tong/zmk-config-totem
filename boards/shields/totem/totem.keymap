@@ -8,7 +8,7 @@
 
 #define TAP_TIMEOUT 150
 #define PRIOR_IDLE 60
-#define QUICK_TAP_MS 100
+#define QUICK_TAP_MS 175
 
 #define BASE  0
 #define LAY1  1
