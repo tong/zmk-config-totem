@@ -24,6 +24,7 @@
 
 / {
     behaviors {
+/*
       hm: homerow_mods {
         compatible = "zmk,behavior-hold-tap";
         label = "homerow mods";
@@ -34,6 +35,7 @@
         require-prior-idle-ms = <PRIOR_IDLE>;
         bindings = <&kp>, <&kp>;
       };
+*/
       hml: homerow_mods_left {
         compatible = "zmk,behavior-hold-tap";
         label = "homerow mods left";
