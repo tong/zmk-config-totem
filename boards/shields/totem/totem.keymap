@@ -14,7 +14,6 @@
 #define LAY1  1
 #define LAY2  2
 #define ADJ   3
-#define GAME  4
 
 &mt {
   flavor = "tap-preferred";
@@ -101,10 +100,10 @@
         label= "LAY1";
         bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
-                &kp N1     &kp N2     &kp N3      &kp N4     &kp N5            &kp N6      &kp N7      &kp N8      &kp N9      &kp N0
-                &kp EXCL   &kp AT     &kp HASH    &kp DLLR   &kp PRCNT         &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &kp KP_PLUS
-    &trans      &kp TILDE  &kp UNDER  &kp MINUS   &kp BSLH   &kp PIPE          &trans      &kp KP_PLUS &kp EQUAL   &trans      &trans      &kp EQUAL
-                                      &trans      &kp ESC    &trans            &trans      &trans   &to GAME
+               &kp N1      &kp N2      &kp N3      &kp N4      &kp N5          &kp N6      &kp N7      &kp N8      &kp N9      &kp N0
+               &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT       &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &kp KP_PLUS
+    &trans     &kp TILDE   &kp UNDER   &kp MINUS   &kp BSLH    &kp PIPE        &trans      &kp KP_PLUS &kp EQUAL   &trans      &trans      &kp EQUAL
+                                       &trans      &kp ESC     &trans          &trans      &trans   &trans
         >;
       };
 
@@ -112,10 +111,10 @@
         label= "LAY2"; 
         bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
-                &kp N1     &kp N2     &kp N3      &kp N4     &kp N5            &kp N6      &kp N7      &kp N8      &kp N9      &kp N0
-                &kp EXCL   &kp AT     &kp HASH    &kp DLLR   &kp PRCNT         &kp CARET   &kp AMPS    &kp STAR    &kp LPAR    &kp RPAR
-    &trans      &kp TILDE  &kp UNDER  &kp MINUS   &kp BSLH   &kp PIPE          &kp GRAVE   &kp LBRC    &kp RBRC    &kp LBKT    &kp RBKT    &kp EQUAL
-                                      &to GAME    &mo ADJ    &trans            &trans      &trans      &trans
+               &kp N1      &kp N2      &kp N3      &kp N4      &kp N5          &kp N6      &kp N7      &kp N8      &kp N9      &kp N0
+               &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT       &kp CARET   &kp AMPS    &kp STAR    &kp LPAR    &kp RPAR
+    &trans     &kp TILDE   &kp UNDER   &kp MINUS   &kp BSLH    &kp PIPE        &kp GRAVE   &kp LBRC    &kp RBRC    &kp LBKT    &kp RBKT    &kp EQUAL
+                                       &trans      &mo ADJ     &trans          &trans      &trans      &trans
         >;
       };
 
@@ -123,21 +122,10 @@
         label= "ADJ";
         bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
-                &sys_reset  &bt BT_CLR &out OUT_BLE &trans     &bt BT_SEL 0    &trans      &kp F7      &kp F8      &kp F9      &kp F12
-                &bootloader &bt BT_NXT &out OUT_USB &trans     &bt BT_SEL 1    &trans      &kp F4      &kp F5      &kp F6      &kp F11
-   &trans      &trans       &bt BT_PRV &trans       &trans     &bt BT_SEL 2    &trans      &kp F1      &kp F2      &kp F3      &kp F10     &trans
+               &sys_reset  &bt BT_CLR &out OUT_BLE &trans     &bt BT_SEL 0     &trans      &kp F7      &kp F8      &kp F9      &kp F12
+               &bootloader &bt BT_NXT &out OUT_USB &trans     &bt BT_SEL 1     &trans      &kp F4      &kp F5      &kp F6      &kp F11
+   &trans      &trans      &bt BT_PRV &trans       &trans     &bt BT_SEL 2     &trans      &kp F1      &kp F2      &kp F3      &kp F10     &trans
                                        &trans       &trans     &trans          &trans      &trans      &trans
-        >;
-      };
-
-      game_layer {
-        label= "GAME";
-        bindings = <
-// ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
-                &none      &none       &kp W       &none       &none           &none       &none       &none       &none       &none
-                &kp LSHFT  &kp A       &kp S       &kp D       &none           &none       &kp X       &kp Y       &none       &kp RSHFT
-    &kp TAB     &kp LCTRL  &none       &none       &none        &none          &none       &none       &none       &none       &kp RCTRL   &none
-                                       &kp ESC     &none       &kp SPACE       &kp BSPC    &kp ENTER   &to BASE
         >;
       };
 
